@@ -1,9 +1,6 @@
-package application;
+package managementProgram;
 	
 import javafx.application.Application;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
@@ -15,8 +12,8 @@ public class Main extends Application {
 		
 		primaryStage.setResizable(false);
 		
-		MainMenuLoader loader = new MainMenuLoader();
-		loader.loadScene(MainMenu.fxml);
+		MainMenuLoader loader = new MainMenuLoader(primaryStage);
+		loader.loadScene("MainMenu.fxml");
 		primaryStage.show();
 		
 	}
