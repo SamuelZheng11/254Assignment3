@@ -2,7 +2,7 @@ package managementProgram;
 
 import javafx.stage.Stage;
 
-public class MainMenuLoader extends SceneLoader{
+public class MainMenuLoader extends SceneLoader {
 
 	public MainMenuLoader(Stage stage) {
 		
@@ -10,8 +10,11 @@ public class MainMenuLoader extends SceneLoader{
 		
 	}
 	
-	protected void useController(MainMenuController controller) {
-		controller.setStage(this.stage);
+	protected void useController(SceneController controller) {
+		if(controller instanceof MainMenuController) {
+		((MainMenuController) controller).setStage(this.stage);
+		}
+
 	}
 	
 }

@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managementProgram.MainMenuController">
    <children>
       <Label text="Lease Management Program">
          <font>
@@ -19,9 +18,9 @@
             <Insets top="15.0" />
          </VBox.margin>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Manage Equipment" />
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Manage Customers" />
-      <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" text="Manage Employees" />
+      <Button mnemonicParsing="false" onAction="#ManageEquipment" prefHeight="50.0" prefWidth="200.0" text="Manage Equipment" />
+      <Button mnemonicParsing="false" onAction="#ManageCustomers" prefHeight="50.0" prefWidth="200.0" text="Manage Customers" />
+      <Button mnemonicParsing="false" onAction="#ManageEmployees" prefHeight="50.0" prefWidth="200.0" text="Manage Employees" />
       <Button mnemonicParsing="false" onAction="#quit" prefHeight="50.0" prefWidth="200.0" text="Exit">
          <VBox.margin>
             <Insets top="5.0" />

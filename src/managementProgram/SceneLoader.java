@@ -41,6 +41,6 @@ public class SceneLoader {
 	}
 	
 	// Optional hook method
-	protected void useController(MainMenuController controller) {}
+	protected void useController(SceneController controller) {}
 	
 }
