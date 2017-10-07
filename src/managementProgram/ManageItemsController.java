@@ -4,33 +4,27 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class ManageItemsController extends SceneController {
+public abstract class ManageItemsController extends SceneController {
 
-	private Stage stage;
 	@FXML
-	private Label name;
+	protected Label name = new Label();
 	
-	public void setStage(Stage stage) {
-		this.stage = stage;
-		this.name.setText("Manage Leases");
+	protected void setManageType(ManageItemTypes manageItemType) {
+		this.name.setText("Manage " + manageItemType.toString());
 	}
 	
-//	@FXML
-//	public abstract void add();
-//	
-//	@FXML
-//	public abstract void update();
-//	
-//	@FXML
-//	public abstract void delete();
-//	
-//	@FXML
-//	public abstract void search();
+	@FXML
+	protected abstract void add();
 	
 	@FXML
-	public void returnToMainMenu() {
-		MainMenuLoader loader = new MainMenuLoader(this.stage);
-		loader.loadScene("MainMenu.fxml");
-	}
+	protected abstract void update();
 	
+	@FXML
+	protected abstract void delete();
+	
+	@FXML
+	protected abstract void search();
+
+	public abstract void setStage(Stage stage);
+
 }

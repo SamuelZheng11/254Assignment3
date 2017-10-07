@@ -3,21 +3,25 @@ package managementProgram;
 import javafx.stage.Stage;
 
 public class ManageItemsLoader extends SceneLoader {
-	
+
+	private ManageItemsController controller;
+
 	public ManageItemsLoader(Stage stage) {
-		
+
 		super(stage);
-		
-	}
-	
-	protected void useController( SceneController controller) {
-		if( controller instanceof ManageItemsController) {
-			controller = (ManageItemsController) controller;
-			((ManageItemsController) controller).setStage(this.stage);
-		}else {
-			System.out.println("failed");
-		}
 
 	}
-	
+
+	public void setController(ManageItemsController controller) {
+
+		this.controller = controller;
+
+	}
+
+	protected void useController() {
+
+		this.controller.setStage(this.stage);
+
+	}
+
 }

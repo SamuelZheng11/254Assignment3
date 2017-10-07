@@ -7,41 +7,45 @@ import javafx.stage.WindowEvent;
 public class MainMenuController extends SceneController{
 
 	private Stage stage;
+	private ManageItemsLoader loader;
 	
 	public void setStage(Stage stage) {
 		this.stage = stage;
+		
 	}
 	
 	@FXML
 	private void ManageLease() {
-		
-		ManageItemsLoader loader = new ManageItemsLoader(this.stage);
-		loader.loadScene("ManageItems.fxml");
+		loader = new ManageItemsLoader(this.stage);
+		loader.setController(new ManageLeasesController());
+		loadScene();
 		
 	}
 	
 	@FXML
 	private void ManageEquipment() {
 		
-		ManageItemsLoader loader = new ManageItemsLoader(this.stage);
-		loader.loadScene("ManageItems.fxml");
+		loader.setController(new ManageEquipmentController());
+		loadScene();
 		
 	}
 	
 	@FXML
 	private void ManageCustomers() {
 		
-		ManageItemsLoader loader = new ManageItemsLoader(this.stage);
-		loader.loadScene("ManageItems.fxml");
+		loadScene();
 		
 	}
 	
 	@FXML
 	private void ManageEmployees() {
 		
-		ManageItemsLoader loader = new ManageItemsLoader(this.stage);
-		loader.loadScene("ManageItems.fxml");
+		loadScene();
 		
+	}
+	
+	private void loadScene(){
+		loader.loadScene("ManageItems.fxml");
 	}
 	
 	@FXML

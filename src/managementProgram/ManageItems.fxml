@@ -6,9 +6,9 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managementProgram.ManageItemsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="managementProgram.ManageLeasesController">
    <children>
-      <Button layoutX="87.0" layoutY="286.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="50.0" text="Add" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="70.0" />
+      <Button layoutX="87.0" layoutY="286.0" mnemonicParsing="false" onAction="#add" prefHeight="35.0" prefWidth="50.0" text="Add" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="70.0" />
       <Button layoutX="196.0" layoutY="286.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" text="Update" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="140.0" />
       <Button layoutX="294.0" layoutY="286.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="70.0" text="Delete" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="260.0" />
       <Button layoutX="434.0" layoutY="286.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" text="Search" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="350.0" />

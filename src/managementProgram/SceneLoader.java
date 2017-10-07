@@ -26,7 +26,7 @@ public class SceneLoader {
 			
 			layout = loader.load();
 			
-			useController(loader.getController());
+			useController();
 			
 		}catch(IOException ioe){
 			
@@ -41,6 +41,6 @@ public class SceneLoader {
 	}
 	
 	// Optional hook method
-	protected void useController(SceneController controller) {}
+	protected void useController() {}
 	
 }
