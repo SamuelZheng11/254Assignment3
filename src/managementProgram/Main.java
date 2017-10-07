@@ -13,7 +13,7 @@ public class Main extends Application {
 		primaryStage.setResizable(false);
 		
 		MainMenuLoader loader = new MainMenuLoader(primaryStage);
-//		loader.setController(new MainMenuController());
+		loader.setController(new MainMenuController());
 		loader.loadScene("MainMenu.fxml");
 		
 		primaryStage.show();

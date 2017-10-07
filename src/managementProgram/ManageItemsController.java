@@ -7,11 +7,7 @@ import javafx.stage.Stage;
 public abstract class ManageItemsController extends SceneController {
 
 	@FXML
-	protected Label name = new Label();
-	
-	protected void setManageType(ManageItemTypes manageItemType) {
-		this.name.setText("Manage " + manageItemType.toString());
-	}
+	protected Label itemType;
 	
 	@FXML
 	protected abstract void add();
@@ -26,5 +22,14 @@ public abstract class ManageItemsController extends SceneController {
 	protected abstract void search();
 
 	public abstract void setStage(Stage stage);
+	
+	@FXML
+	protected final void returnToMainMenu() {
+		MainMenuLoader loader = new MainMenuLoader(this.stage);
+		MainMenuController controller = new MainMenuController();
+		controller.setStage(this.stage);
+		loader.setController(controller);
+		loader.loadScene("MainMenu.fxml");
+	}
 
 }

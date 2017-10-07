@@ -11,13 +11,15 @@ public class MainMenuController extends SceneController{
 	
 	public void setStage(Stage stage) {
 		this.stage = stage;
-		
+		this.loader = new ManageItemsLoader(this.stage);
 	}
 	
 	@FXML
 	private void ManageLease() {
-		loader = new ManageItemsLoader(this.stage);
-		loader.setController(new ManageLeasesController());
+
+		ManageLeasesController controller = new ManageLeasesController();
+		controller.setStage(this.stage);
+		loader.setController(controller);
 		loadScene();
 		
 	}

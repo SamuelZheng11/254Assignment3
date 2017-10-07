@@ -4,7 +4,6 @@ import javafx.stage.Stage;
 
 public class ManageItemsLoader extends SceneLoader {
 
-	private ManageItemsController controller;
 
 	public ManageItemsLoader(Stage stage) {
 

@@ -6,7 +6,6 @@ public class ManageEquipmentController extends ManageItemsController{
 
 	public void setStage(Stage stage) {
 		this.stage = stage;
-		super.setManageType(ManageItemTypes.Equipment);
 	}
 	
 	@Override

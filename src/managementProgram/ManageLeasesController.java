@@ -7,7 +7,6 @@ public class ManageLeasesController extends ManageItemsController{
 	
 	public void setStage(Stage stage) {
 		this.stage = stage;
-		super.setManageType(ManageItemTypes.Leases);
 	}
 	
 	protected void add() {
@@ -31,6 +30,5 @@ public class ManageLeasesController extends ManageItemsController{
 	protected void search()	{
 		
 	}
-
 	
 }

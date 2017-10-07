@@ -4,7 +4,7 @@ import javafx.stage.Stage;
 
 public class MainMenuLoader extends SceneLoader {
 
-	private MainMenuController controller;
+	
 
 	public MainMenuLoader(Stage stage) {
 

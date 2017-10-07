@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 public class SceneLoader {
 
 	protected Stage stage;
+	protected SceneController controller;
 	
 	public SceneLoader(Stage stage) {
 		this.stage = stage;
@@ -19,6 +20,7 @@ public class SceneLoader {
 		
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(this.getClass().getResource(fileName));
+		loader.setController(controller);
 		
 		Parent layout = null;
 		
