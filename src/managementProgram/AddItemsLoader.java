@@ -2,15 +2,15 @@ package managementProgram;
 
 import javafx.stage.Stage;
 
-public class ManageItemsLoader extends SceneLoader {
+public class AddItemsLoader extends SceneLoader {
 
-	public ManageItemsLoader(Stage stage) {
+	public AddItemsLoader(Stage stage) {
 
 		super(stage);
 
 	}
 
-	public void setController(ManageItemsController controller) {
+	public void setController(AddItemsController controller) {
 
 		this.controller = controller;
 
@@ -19,7 +19,7 @@ public class ManageItemsLoader extends SceneLoader {
 	protected void useController() {
 
 		this.controller.setStage(this.stage);
-
+		
 	}
-
+	
 }

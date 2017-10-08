@@ -27,22 +27,18 @@ public class MainMenuController extends SceneController{
 	@FXML
 	private void ManageEquipment() {
 		
-		loader.setController(new ManageEquipmentController());
-		loadScene();
 		
 	}
 	
 	@FXML
 	private void ManageCustomers() {
 		
-		loadScene();
 		
 	}
 	
 	@FXML
 	private void ManageEmployees() {
-		
-		loadScene();
+
 		
 	}
 	

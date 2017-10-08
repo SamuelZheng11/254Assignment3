@@ -10,10 +10,13 @@ public class ManageLeasesController extends ManageItemsController{
 	}
 	
 	protected void add() {
-		Stage addWindow = new Stage();
-		SceneLoader loader = new SceneLoader(addWindow);
+		
+		AddLeaseController controller = new AddLeaseController();
+		controller.setStage(this.stage);
+		AddItemsLoader loader = new AddItemsLoader(this.stage);
+		loader.setController(controller);
 		loader.loadScene("AddNewLease.fxml");
-		addWindow.show();
+		
 	}
 	
 	@FXML
