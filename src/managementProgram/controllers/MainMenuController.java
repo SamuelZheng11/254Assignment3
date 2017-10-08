@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import managementProgram.controllers.customers.ManageCustomerController;
+import managementProgram.controllers.employees.ManageEmployeeController;
 import managementProgram.controllers.leases.ManageLeasesController;
 import managementProgram.sceneAndSceneLoaders.ManageItemsLoader;
 
@@ -55,6 +56,7 @@ public class MainMenuController extends SceneController{
 		controller.setStage(this.stage);
 		loader.setController(controller);
 		loadScene();
+		controller.setupDemo();
 		
 	}
 	

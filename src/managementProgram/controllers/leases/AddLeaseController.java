@@ -27,6 +27,18 @@ public class AddLeaseController extends AddItemsController {
 
 	@FXML
 	private TextField endDate;
+	
+	@FXML
+	private TextField dateOfEntry;
+	
+	@FXML
+	private TextField leaseRate;
+	
+	@FXML
+	private TextField leaseAmount;
+	
+	@FXML
+	private TextField securityDeposit;
 
 	@FXML
 	private TextArea details;
@@ -80,6 +92,22 @@ public class AddLeaseController extends AddItemsController {
 
 	public void setEndDate(String endDate) {
 		this.endDate.setText(endDate);
+	}
+	
+	public void setDateOfEntry(String dateOfEntry) {
+		this.dateOfEntry.setText(dateOfEntry);
+	}
+	
+	public void setLeaseRate(String leaseRate) {
+		this.leaseRate.setText(leaseRate);
+	}
+	
+	public void setLeaseAmount(String leaseAmount) {
+		this.leaseAmount.setText(leaseAmount);
+	}
+	
+	public void setSecurityDeposit(String securityDeposit) {
+		this.securityDeposit.setText(securityDeposit);
 	}
 
 	public void setDetails(String details) {

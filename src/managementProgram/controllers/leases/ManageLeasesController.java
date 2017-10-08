@@ -50,8 +50,8 @@ public class ManageLeasesController extends ManageItemsController {
 	}
 
 	public void setupDemo() {
-		Lease demo1 = new Lease("202020", "Mark", "Computer", "31 Dec 2016", "1 week", "7 Jan 2017", "details");
-		Lease demo2 = new Lease("20403020", "Jack", "Computer", "1 Nov 2016", "2 week", "15 Nov 2016", "details");
+		Lease demo1 = new Lease("202020", "Mark", "Computer", "31 Dec 2016", "1 week", "7 Jan 2017", "30 Dec 2016", "5%", "$1000", "$1000", "details");
+		Lease demo2 = new Lease("20403020", "Jack", "Computer", "1 Nov 2016", "2 week", "15 Nov 2016", "31 Oct 2016", "5%", "$1000", "$1000", "details");
 		this.leases.add(demo1);
 		this.leases.add(demo2);
 
@@ -84,6 +84,10 @@ public class ManageLeasesController extends ManageItemsController {
 		controller.setStartDate(selectedItem.getReadableStartDate());
 		controller.setDuration(selectedItem.getReadableDuration());
 		controller.setEndDate(selectedItem.getReadableEndDate());
+		controller.setDateOfEntry(selectedItem.getReadableDateOfEntry());
+		controller.setLeaseRate(selectedItem.getReadableLeaseRate());
+		controller.setLeaseAmount(selectedItem.getReadableLeaseAmount());
+		controller.setSecurityDeposit(selectedItem.getReadableSecurityDeposit());
 		controller.setDetails(selectedItem.getReadableDetails());
 
 	}

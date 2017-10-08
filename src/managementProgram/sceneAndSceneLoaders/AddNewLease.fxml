@@ -19,9 +19,13 @@
             <Label text="Start Date" />
             <Label text="Duration" />
             <Label text="End Date" />
+            <Label text="Date Of Entry" />
+            <Label text="Lease Rate" />
+            <Label text="Lease Amount" />
+            <Label text="Security Deposit" />
             <Label text="Additional Details">
                <padding>
-                  <Insets top="75.0" />
+                  <Insets top="35.0" />
                </padding>
             </Label>
          </children>
@@ -37,7 +41,11 @@
             <TextField fx:id="startDate" />
             <TextField fx:id="duration" />
             <TextField fx:id="endDate" />
-            <TextArea fx:id="details" prefHeight="200.0" prefWidth="200.0" />
+            <TextField fx:id="dateOfEntry" />
+            <TextField fx:id="leaseRate" />
+            <TextField fx:id="leaseAmount" />
+            <TextField fx:id="securityDeposit" />
+            <TextArea fx:id="details" />
             <AnchorPane>
                <children>
                   <Button fx:id="confirm" layoutX="59.0" layoutY="40.0" mnemonicParsing="false" onAction="#comfirm" prefHeight="50.0" prefWidth="100.0" text="Confirm" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="10.0" />

@@ -5,58 +5,51 @@ import javafx.beans.property.StringProperty;
 
 public class Employee extends Item {
 	
-	private final String employeeID;
+	private final String staffID;
 
-	private String customerName;
+	private String staffName;
 	
-	private String equipment;
+	private String address;
 	
-	private final String startDate;
+	private final String email;
 	
-	private String duration;
+	private String contactNumber;
 	
-	private String endDate;
+	private String irdNumber;
 	
-	private String details;
-	
-	public Employee(String leaseID, String customerName, String equipment, String startDate, String duration, String endDate, String details) {
+	public Employee(String staffID, String staffName, String address, String email, String contactNumber, String irdNumber) {
 		
-		this.employeeID = leaseID;
-		this.customerName = customerName;
-		this.equipment = equipment;
-		this.startDate = startDate;
-		this.duration = duration;
-		this.endDate = endDate;
-		this.details = details;
+		this.staffID = staffID;
+		this.staffName = staffName;
+		this.address = address;
+		this.email = email;
+		this.contactNumber = contactNumber;
+		this.irdNumber = irdNumber;
 		
 	}
 	
-	public String getReadableEmployeeID() {
-		return this.employeeID;
+	public String getReadableStaffID() {
+		return this.staffID;
 	}
 	
-	public String getReadableCustomerName() {
-		return this.customerName;
+	public String getReadableStaffName() {
+		return this.staffName;
 	}
 
-	public String getReadableEquipment() {
-		return this.equipment;
+	public String getReadableAddress() {
+		return this.address;
 	}
 
-	public String getReadableStartDate() {
-		return this.startDate;
+	public String getReadableEmail() {
+		return this.email;
 	}
 	
-	public String getReadableDuration() {
-		return this.duration;
+	public String getReadableContactNumber() {
+		return this.contactNumber;
 	}
 
-	public String getReadableEndDate() {
-		return this.endDate;
-	}
-
-	public String getReadableDetails() {
-		return this.details;
+	public String getReadableIRDNumber() {
+		return this.irdNumber;
 	}
 	
 	
@@ -64,31 +57,27 @@ public class Employee extends Item {
 	
 	
 	public StringProperty getID() {
-		return new SimpleStringProperty(this.employeeID);
+		return new SimpleStringProperty(this.staffID);
 	}
 
-	public StringProperty getCustomerName() {
-		return new SimpleStringProperty(this.customerName);
+	public StringProperty getStaffName() {
+		return new SimpleStringProperty(this.staffName);
 	}
 
-	public StringProperty getEquipment() {
-		return new SimpleStringProperty(this.equipment);
+	public StringProperty getAddress() {
+		return new SimpleStringProperty(this.address);
 	}
 
-	public StringProperty getStartDate() {
-		return new SimpleStringProperty(this.startDate);
+	public StringProperty getEmail() {
+		return new SimpleStringProperty(this.email);
 	}
 
-	public StringProperty getDuration() {
-		return new SimpleStringProperty(this.duration);
+	public StringProperty getContactNumber() {
+		return new SimpleStringProperty(this.contactNumber);
 	}
 
-	public StringProperty getEndDate() {
-		return new SimpleStringProperty(this.endDate);
-	}
-
-	public StringProperty getDetails() {
-		return new SimpleStringProperty(this.details);
+	public StringProperty getIRDNumber() {
+		return new SimpleStringProperty(this.irdNumber);
 	}
 	
 
