@@ -15,36 +15,49 @@ public abstract class AddItemsController extends SceneController {
 
 	@FXML
 	private Button cancel;
-	
+
 	@FXML
 	protected void cancel() {
-		
-		Alert alert = new Alert(AlertType.CONFIRMATION);
-		alert.setTitle("Cancel item");
-		alert.setHeaderText("Are you sure you want to cancel the item?");
-		alert.setContentText("By pressing \"OK\" you will cancel the item");
 
-		Optional<ButtonType> result = alert.showAndWait();
-		if (result.get() == ButtonType.OK){
+		Alert cancel = new Alert(AlertType.CONFIRMATION);
+		cancel.setTitle("Cancel item");
+		cancel.setHeaderText("Are you sure you want to cancel the item?");
+		cancel.setContentText("By pressing \"OK\" you will cancel the item");
+
+		Optional<ButtonType> result = cancel.showAndWait();
+		if (result.get() == ButtonType.OK) {
 			returnToManager();
 		} else {
-			//left empty intentionally
+			// left empty intentionally
 		}
 	}
-	
+
 	@FXML
 	protected void comfirm() {
-		
-		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("Item Created");
-		alert.setHeaderText("Item Created");
-		alert.setContentText("Item with details have been made");
 
-		alert.showAndWait();
-		returnToManager();
+		Alert confrim = new Alert(AlertType.INFORMATION);
+		confrim.setTitle("Item Created");
+		confrim.setHeaderText("Item Created");
+		confrim.setContentText("Item with details have been made");
+		if (isValid()) {
+			confrim.showAndWait();
+			returnToManager();
+		}else {
+			Alert unfilledFields = new Alert(AlertType.INFORMATION);
+			unfilledFields.setTitle("Please fill in relevent fields");
+			unfilledFields.setHeaderText("One or more of the required fields is not filled in");
+			unfilledFields.setContentText("please fill in all the required fields");
+			unfilledFields.showAndWait();
+		}
 	}
-	
-	//hook method for use in the confirm and cancel buttons
+
+	// hook method for use in the confirm and cancel buttons
 	protected abstract void returnToManager();
-	
+
+	// hook method for checking if the nessasary fields are filled in
+	protected abstract boolean isValid();
+
+	// hook method for use for creating the item
+	protected abstract void create();
+
 }

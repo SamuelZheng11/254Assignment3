@@ -38,6 +38,17 @@ public class AddLeaseController extends AddItemsController {
 
 	}
 	
+	public boolean isValid() {
+		if((this.leaseID == null) || (this.customerName == null) || (this.equipment == null) || (this.startDate == null ) ||(this.duration == null ) || (this.endDate == null)) {
+			return false;
+		}
+		return true;
+	}
+	
+	public void create() {
+		//in future this would be implemented and based to the manager
+	}
+	
 	protected void returnToManager() {
 		ManageLeasesController controller = new ManageLeasesController();
 		controller.setStage(this.stage);

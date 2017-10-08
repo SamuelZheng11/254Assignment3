@@ -1,13 +1,22 @@
 package managementProgram;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 public abstract class ManageItemsController extends SceneController {
 
 	@FXML
-	protected Label itemType;
+	protected TableView<Lease> tableView;
+	
+	@FXML 
+	protected TableColumn<Lease, String> tableColumn;
+	
+	@FXML
+	public void initialize() {
+		this.tableColumn.setCellValueFactory(cellData-> cellData.getValue().getLeaseID());
+	}
 	
 	@FXML
 	protected abstract void add();
