@@ -1,9 +1,10 @@
-package managementProgram.controllers;
+package managementProgram.controllers.leases;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import managementProgram.controllers.AddItemsController;
 import managementProgram.sceneAndSceneLoaders.ManageItemsLoader;
 
 public class AddLeaseController extends AddItemsController {

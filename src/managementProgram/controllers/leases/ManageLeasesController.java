@@ -1,4 +1,4 @@
-package managementProgram.controllers;
+package managementProgram.controllers.leases;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import managementProgram.controllers.ManageItemsController;
+import managementProgram.managementEntities.Item;
 import managementProgram.managementEntities.Lease;
 import managementProgram.managementEntities.ManageItemTypes;
 import managementProgram.sceneAndSceneLoaders.AddItemsLoader;
@@ -13,7 +15,7 @@ import managementProgram.sceneAndSceneLoaders.SearchItemsLoader;
 
 public class ManageLeasesController extends ManageItemsController {
 
-	protected ObservableList<Lease> leases = FXCollections.observableArrayList();
+	protected ObservableList<Item> leases = FXCollections.observableArrayList();
 
 	public void setStage(Stage stage) {
 		this.stage = stage;
@@ -24,7 +26,7 @@ public class ManageLeasesController extends ManageItemsController {
 	public void initialize() {
 		super.initialize();
 	}
-	
+
 	@FXML
 	protected void add() {
 
@@ -75,7 +77,7 @@ public class ManageLeasesController extends ManageItemsController {
 		loader.setController(controller);
 		loader.loadScene("AddNewLease.fxml");
 
-		Lease selectedItem = this.tableView.getSelectionModel().getSelectedItem();
+		Lease selectedItem = (Lease) this.tableView.getSelectionModel().getSelectedItem();
 		controller.setLeaseID(selectedItem.getReadableLeaseID());
 		controller.setCustomerName(selectedItem.getReadableCustomerName());
 		controller.setEquipment(selectedItem.getReadableEquipment());
@@ -89,7 +91,7 @@ public class ManageLeasesController extends ManageItemsController {
 	// method for relaying to the reader what the instance of the manager is of
 	@Override
 	protected void setItemType() {
-		
+
 		this.managerType.setText("Manage " + ManageItemTypes.Leases.toString());
 
 	}

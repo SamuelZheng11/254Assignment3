@@ -1,9 +1,10 @@
-package managementProgram.controllers;
+package managementProgram.controllers.customers;
 
 import javafx.stage.Stage;
+import managementProgram.controllers.SearchItemsController;
 import managementProgram.sceneAndSceneLoaders.ManageItemsLoader;
 
-public class SearchLeaseController extends SearchItemsController {
+public class SearchCustomerController extends SearchItemsController {
 
 	@Override
 	public void setStage(Stage stage) {
@@ -11,10 +12,10 @@ public class SearchLeaseController extends SearchItemsController {
 		this.stage = stage;
 
 	}
-	
+
 	@Override
 	protected void returnToManager() {
-		ManageLeasesController controller = new ManageLeasesController();
+		ManageCustomerController controller = new ManageCustomerController();
 		controller.setStage(this.stage);
 		ManageItemsLoader loader = new ManageItemsLoader(this.stage);
 		loader.setController(controller);

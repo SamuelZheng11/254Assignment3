@@ -3,9 +3,9 @@ package managementProgram.managementEntities;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Lease extends Item {
+public class Equipment extends Item {
 	
-	private final String leaseID;
+	private final String EquipmentID;
 
 	private String customerName;
 	
@@ -19,9 +19,9 @@ public class Lease extends Item {
 	
 	private String details;
 	
-	public Lease(String leaseID, String customerName, String equipment, String startDate, String duration, String endDate, String details) {
+	public Equipment(String leaseID, String customerName, String equipment, String startDate, String duration, String endDate, String details) {
 		
-		this.leaseID = leaseID;
+		this.EquipmentID = leaseID;
 		this.customerName = customerName;
 		this.equipment = equipment;
 		this.startDate = startDate;
@@ -31,8 +31,8 @@ public class Lease extends Item {
 		
 	}
 	
-	public String getReadableLeaseID() {
-		return this.leaseID;
+	public String getReadableEquipmentID() {
+		return this.EquipmentID;
 	}
 	
 	public String getReadableCustomerName() {
@@ -64,7 +64,7 @@ public class Lease extends Item {
 	
 	
 	public StringProperty getID() {
-		return new SimpleStringProperty(this.leaseID);
+		return new SimpleStringProperty(this.EquipmentID);
 	}
 
 	public StringProperty getCustomerName() {

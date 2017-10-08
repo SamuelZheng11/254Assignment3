@@ -11,23 +11,22 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import managementProgram.managementEntities.Item;
-import managementProgram.managementEntities.Lease;
 import managementProgram.sceneAndSceneLoaders.MainMenuLoader;
 
 public abstract class ManageItemsController extends SceneController {
 
 	@FXML
-	protected TableView<Lease> tableView;
+	protected TableView<Item> tableView;
 
 	@FXML
 	protected Label managerType;
 	
 	@FXML
-	protected TableColumn<Lease, String> tableColumn;
+	protected TableColumn<Item, String> tableColumn;
 
 	@FXML
 	public void initialize() {
-		this.tableColumn.setCellValueFactory(cellData -> cellData.getValue().getLeaseID());
+		this.tableColumn.setCellValueFactory(cellData -> cellData.getValue().getID());
 		this.tableColumn.setText("ID");
 		setItemType();
 	}
