@@ -16,7 +16,7 @@ public class ManageLeasesController extends ManageItemsController{
 	
 	public void setStage(Stage stage) {
 		this.stage = stage;
-		setupDemo();
+		
 	}
 	
 	protected void add() {
@@ -44,7 +44,7 @@ public class ManageLeasesController extends ManageItemsController{
 		
 	}
 	
-	private void setupDemo() {
+	public void setupDemo() {
 		Lease demo1 = new Lease("202020", "Mark", "Computer", "Dec", "1 week", "Jan", "");
 		Lease demo2 = new Lease("20403020", "Jack", "Computer", "Dec", "2 week", "Jan", "");
 		ObservableList<Lease> leases = FXCollections.observableArrayList();

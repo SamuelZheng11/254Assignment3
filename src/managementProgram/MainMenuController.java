@@ -21,7 +21,7 @@ public class MainMenuController extends SceneController{
 		controller.setStage(this.stage);
 		loader.setController(controller);
 		loadScene();
-		
+		controller.setupDemo();
 	}
 	
 	@FXML
