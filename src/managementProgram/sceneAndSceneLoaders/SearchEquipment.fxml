@@ -12,12 +12,12 @@
    <items>
       <VBox alignment="TOP_CENTER" spacing="10.0">
          <children>
-            <Label text="Lease ID" />
-            <Label text="Customer Name" />
-            <Label text="Equipment" />
-            <Label text="Start Date" />
-            <Label text="Duration" />
-            <Label text="End Date" />
+            <Label text="Equipment ID" />
+            <Label text="Equipment Type" />
+            <Label text="Year" />
+            <Label text="Weight" />
+            <Label text="Printer PPM" />
+            <Label text="System OS" />
          </children>
          <padding>
             <Insets top="5.0" />
@@ -33,7 +33,7 @@
             <TextField />
             <AnchorPane>
                <children>
-                  <Button layoutX="59.0" layoutY="40.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="Search" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="10.0" />
+                  <Button layoutX="59.0" layoutY="40.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="100.0" text="search" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="10.0" />
                   <Button fx:id="cancel" layoutX="170.0" layoutY="49.0" mnemonicParsing="false" onAction="#cancel" prefHeight="50.0" prefWidth="100.0" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0" />
                </children>
             </AnchorPane>

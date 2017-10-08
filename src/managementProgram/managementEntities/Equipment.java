@@ -4,92 +4,79 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Equipment extends Item {
-	
-	private final String EquipmentID;
 
-	private String customerName;
-	
-	private String equipment;
-	
-	private final String startDate;
-	
-	private String duration;
-	
-	private String endDate;
-	
-	private String details;
-	
-	public Equipment(String leaseID, String customerName, String equipment, String startDate, String duration, String endDate, String details) {
-		
-		this.EquipmentID = leaseID;
-		this.customerName = customerName;
-		this.equipment = equipment;
-		this.startDate = startDate;
-		this.duration = duration;
-		this.endDate = endDate;
-		this.details = details;
-		
+	private final String equipmentID;
+
+	private String equipmentType;
+
+	private String year;
+
+	private String weight;
+
+	public Equipment(String equipmentID, String equipmentType, String year, String weight) {
+
+		this.equipmentID = equipmentID;
+		this.equipmentType = equipmentType;
+		this.year = year;
+		this.weight = weight;
+
 	}
-	
+
 	public String getReadableEquipmentID() {
-		return this.EquipmentID;
-	}
-	
-	public String getReadableCustomerName() {
-		return this.customerName;
+		return this.equipmentID;
 	}
 
-	public String getReadableEquipment() {
-		return this.equipment;
+	public String getReadableEquipmentType() {
+		return this.equipmentType;
 	}
 
-	public String getReadableStartDate() {
-		return this.startDate;
-	}
-	
-	public String getReadableDuration() {
-		return this.duration;
+	public String getReadableYear() {
+		return this.year;
 	}
 
-	public String getReadableEndDate() {
-		return this.endDate;
+	public String getReadableWeight() {
+		return this.weight;
 	}
+	//
+	// public String getReadableDuration() {
+	// return this.duration;
+	// }
+	//
+	// public String getReadableEndDate() {
+	// return this.endDate;
+	// }
+	//
+	// public String getReadableDetails() {
+	// return this.details;
+	// }
 
-	public String getReadableDetails() {
-		return this.details;
-	}
-	
-	
-	
-	
-	
 	public StringProperty getID() {
-		return new SimpleStringProperty(this.EquipmentID);
+		return new SimpleStringProperty(this.equipmentID);
 	}
 
-	public StringProperty getCustomerName() {
-		return new SimpleStringProperty(this.customerName);
+	public StringProperty getEquipmentType() {
+		return new SimpleStringProperty(this.equipmentType);
 	}
 
-	public StringProperty getEquipment() {
-		return new SimpleStringProperty(this.equipment);
+	public StringProperty getYear() {
+		return new SimpleStringProperty(this.year);
 	}
 
-	public StringProperty getStartDate() {
-		return new SimpleStringProperty(this.startDate);
+	public StringProperty getWeight() {
+		return new SimpleStringProperty(this.weight);
 	}
 
-	public StringProperty getDuration() {
-		return new SimpleStringProperty(this.duration);
-	}
-
-	public StringProperty getEndDate() {
-		return new SimpleStringProperty(this.endDate);
-	}
-
-	public StringProperty getDetails() {
-		return new SimpleStringProperty(this.details);
-	}
-	
+	// public StringProperty getDuration() {
+	// return new SimpleStringProperty(this.duration);
+	// }
+	//
+	// public StringProperty getEndDate() {
+	// return new SimpleStringProperty(this.endDate);
+	// }
+	//
+	// public StringProperty getDetails() {
+	// return new SimpleStringProperty(this.details);
+	// }
+	//
 
 }

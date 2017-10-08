@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import managementProgram.controllers.customers.ManageCustomerController;
 import managementProgram.controllers.employees.ManageEmployeeController;
+import managementProgram.controllers.equipment.ManageEquipmentController;
 import managementProgram.controllers.leases.ManageLeasesController;
 import managementProgram.sceneAndSceneLoaders.ManageItemsLoader;
 
