@@ -1,4 +1,4 @@
-package managementProgram;
+package managementProgram.controllers;
 
 import java.util.Optional;
 
@@ -36,9 +36,9 @@ public abstract class AddItemsController extends SceneController {
 	protected void comfirm() {
 
 		Alert confrim = new Alert(AlertType.INFORMATION);
-		confrim.setTitle("Item Created");
-		confrim.setHeaderText("Item Created");
-		confrim.setContentText("Item with details have been made");
+		confrim.setTitle("Item Saved");
+		confrim.setHeaderText("Item saved");
+		confrim.setContentText("Item with details have been saved");
 		if (isValid()) {
 			confrim.showAndWait();
 			returnToManager();

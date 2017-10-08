@@ -1,8 +1,9 @@
-package managementProgram;
+package managementProgram.controllers;
 
 import javafx.fxml.FXML;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import managementProgram.sceneAndSceneLoaders.ManageItemsLoader;
 
 public class MainMenuController extends SceneController{
 

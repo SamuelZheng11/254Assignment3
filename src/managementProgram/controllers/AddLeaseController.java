@@ -1,12 +1,14 @@
-package managementProgram;
+package managementProgram.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import managementProgram.sceneAndSceneLoaders.ManageItemsLoader;
 
 public class AddLeaseController extends AddItemsController {
 
+	
 	@FXML
 	private TextField leaseID;
 
@@ -29,12 +31,9 @@ public class AddLeaseController extends AddItemsController {
 	private TextArea details;
 
 	@Override
-	protected void setStage(Stage stage) {
+	public void setStage(Stage stage) {
 
 		this.stage = stage;
-
-		// Initially making the confirm button disabled
-		//confirm.setDisable(true);
 
 	}
 	
@@ -55,6 +54,36 @@ public class AddLeaseController extends AddItemsController {
 		ManageItemsLoader loader = new ManageItemsLoader(this.stage);
 		loader.setController(controller);
 		loader.loadScene("ManageItems.fxml");
+		controller.setupDemo();
 	}
+
+	public void setLeaseID(String leaseID) {
+		this.leaseID.setText(leaseID);
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName.setText(customerName);
+	}
+
+	public void setEquipment(String equipment) {
+		this.equipment.setText(equipment);
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate.setText(startDate);
+	}
+
+	public void setDuration(String duration) {
+		this.duration.setText(duration);
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate.setText(endDate);
+	}
+
+	public void setDetails(String details) {
+		this.details.setText(details);
+	}
+
 
 }

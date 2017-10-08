@@ -1,7 +1,9 @@
-package managementProgram;
+package managementProgram.managementEntities;
 	
 import javafx.application.Application;
 import javafx.stage.Stage;
+import managementProgram.controllers.MainMenuController;
+import managementProgram.sceneAndSceneLoaders.MainMenuLoader;
 
 
 public class Main extends Application {

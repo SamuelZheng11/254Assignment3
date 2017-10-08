@@ -1,4 +1,4 @@
-package managementProgram;
+package managementProgram.controllers;
 
 import javafx.stage.Stage;
 
@@ -39,5 +39,5 @@ public abstract class SceneController {
 	//
 	// protected abstract void searchHook();
 
-	protected abstract void setStage(Stage stage);
+	public abstract void setStage(Stage stage);
 }

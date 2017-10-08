@@ -1,6 +1,7 @@
-package managementProgram;
+package managementProgram.sceneAndSceneLoaders;
 
 import javafx.stage.Stage;
+import managementProgram.controllers.MainMenuController;
 
 public class MainMenuLoader extends SceneLoader {
 

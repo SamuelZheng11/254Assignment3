@@ -1,6 +1,7 @@
-package managementProgram;
+package managementProgram.sceneAndSceneLoaders;
 
 import javafx.stage.Stage;
+import managementProgram.controllers.ManageItemsController;
 
 public class ManageItemsLoader extends SceneLoader {
 
