@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <VBox alignment="TOP_CENTER" spacing="10.0">
+         <children>
+            <Label text="Equipment ID" />
+            <Label text="Equipment Type" />
+            <Label text="Year" />
+            <Label text="Weight" />
+            <Label text="System OS" />
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </VBox>
+      <VBox>
+         <children>
+            <TextField fx:id="equipmentID" />
+            <TextField fx:id="equipmentType" editable="false" />
+            <TextField fx:id="year" />
+            <TextField fx:id="weight" />
+            <TextField fx:id="systemOS" />
+            <AnchorPane>
+               <children>
+                  <Button fx:id="confirm" layoutX="59.0" layoutY="40.0" mnemonicParsing="false" onAction="#comfirm" prefHeight="50.0" prefWidth="100.0" text="Confirm" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="10.0" />
+                  <Button fx:id="cancel" layoutX="170.0" layoutY="49.0" mnemonicParsing="false" onAction="#cancel" prefHeight="50.0" prefWidth="100.0" text="Cancel" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="10.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>

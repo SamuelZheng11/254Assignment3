@@ -5,12 +5,15 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import managementProgram.controllers.ManageItemsController;
-import managementProgram.managementEntities.Customer;
-import managementProgram.managementEntities.Equipment;
+import managementProgram.managementEntities.Desktop;
 import managementProgram.managementEntities.Item;
+import managementProgram.managementEntities.Laptop;
 import managementProgram.managementEntities.ManageItemTypes;
+import managementProgram.managementEntities.Printer;
+import managementProgram.sceneAndSceneLoaders.AddEquipmentTypeLoader;
 import managementProgram.sceneAndSceneLoaders.AddItemsLoader;
 import managementProgram.sceneAndSceneLoaders.SearchItemsLoader;
 
@@ -33,11 +36,19 @@ public class ManageEquipmentController extends ManageItemsController {
 	@Override
 	protected void add() {
 
-		AddEquipmentController controller = new AddEquipmentController();
-		controller.setStage(this.stage);
-		AddItemsLoader loader = new AddItemsLoader(this.stage);
+		Stage equipmentSelection = new Stage();
+
+		equipmentSelection.initModality(Modality.WINDOW_MODAL);
+
+		AddEquipmentTypeController controller = new AddEquipmentTypeController();
+		controller.setParentController(this);
+		controller.setStage(equipmentSelection);
+		AddEquipmentTypeLoader loader = new AddEquipmentTypeLoader(equipmentSelection);
 		loader.setController(controller);
-		loader.loadScene("AddCustomer.fxml");
+		loader.loadScene("AddEquipmentType.fxml");
+
+		equipmentSelection.initOwner(this.stage.getScene().getWindow());
+		equipmentSelection.show();
 
 	}
 
@@ -51,19 +62,51 @@ public class ManageEquipmentController extends ManageItemsController {
 			unfilledFields.setContentText("Please select before pressing the update button");
 			unfilledFields.showAndWait();
 			return;
+		} else if (this.tableView.getSelectionModel().getSelectedItem() instanceof Desktop) {
+			
+			AddDesktopController controller = new AddDesktopController();
+			controller.setStage(this.stage);
+			AddItemsLoader loader = new AddItemsLoader(this.stage);
+			loader.setController(controller);
+			loader.loadScene("AddComputer.fxml");
+
+			Desktop selectedItem = (Desktop) this.tableView.getSelectionModel().getSelectedItem();
+			controller.setEquipmentID(selectedItem.getReadableEquipmentID());
+			controller.setEquipmentType(selectedItem.getReadableEquipmentType());
+			controller.setYear(selectedItem.getReadableYear());
+			controller.setWeight(selectedItem.getReadableWeight());
+			controller.setSystemOS(selectedItem.getReadableSystemOS());
+			
+		} else if (this.tableView.getSelectionModel().getSelectedItem() instanceof Laptop) {
+			
+			AddLaptopController controller = new AddLaptopController();
+			controller.setStage(this.stage);
+			AddItemsLoader loader = new AddItemsLoader(this.stage);
+			loader.setController(controller);
+			loader.loadScene("AddComputer.fxml");
+
+			Laptop selectedItem = (Laptop) this.tableView.getSelectionModel().getSelectedItem();
+			controller.setEquipmentID(selectedItem.getReadableEquipmentID());
+			controller.setEquipmentType(selectedItem.getReadableEquipmentType());
+			controller.setYear(selectedItem.getReadableYear());
+			controller.setWeight(selectedItem.getReadableWeight());
+			controller.setSystemOS(selectedItem.getReadableSystemOS());
+			
+		} else if (this.tableView.getSelectionModel().getSelectedItem() instanceof Printer) {
+			
+			AddPrinterController controller = new AddPrinterController();
+			controller.setStage(this.stage);
+			AddItemsLoader loader = new AddItemsLoader(this.stage);
+			loader.setController(controller);
+			loader.loadScene("AddPrinter.fxml");
+
+			Printer selectedItem = (Printer) this.tableView.getSelectionModel().getSelectedItem();
+			controller.setEquipmentID(selectedItem.getReadableEquipmentID());
+			controller.setEquipmentType(selectedItem.getReadableEquipmentType());
+			controller.setYear(selectedItem.getReadableYear());
+			controller.setWeight(selectedItem.getReadableWeight());
+			controller.setPPM(selectedItem.getReadablePPM());
 		}
-
-		AddEquipmentController controller = new AddEquipmentController();
-		controller.setStage(this.stage);
-		AddItemsLoader loader = new AddItemsLoader(this.stage);
-		loader.setController(controller);
-		loader.loadScene("AddCustomer.fxml");
-
-		Equipment selectedItem = (Equipment) this.tableView.getSelectionModel().getSelectedItem();
-		controller.setEquipmentID(selectedItem.getReadableEquipmentID());
-		controller.setEquipmentType(selectedItem.getReadableEquipmentType());
-		controller.setYear(selectedItem.getReadableYear());
-		controller.setWeight(selectedItem.getReadableWeight());
 
 	}
 
@@ -78,13 +121,15 @@ public class ManageEquipmentController extends ManageItemsController {
 	}
 
 	public void setupDemo() {
-		
-//		Customer demo1 = new Customer("435345", "Mark", "1231231", "mark@google.com", "65 street", "Google", "23423");
-//		Customer demo2 = new Customer("43534", "Jack", "342342", "jack@facebook.com", "66 street", "Facebook", "364");
-//		this.customers.add(demo1);
-//		this.customers.add(demo2);
-//
-//		this.tableView.setItems(customers);
+
+		Laptop demo1 = new Laptop("238749238", "2007", "5kg", "Linux");
+		Desktop demo2 = new Desktop("9874923", "2008", "8kg", "Windows");
+		Printer demo3 = new Printer("320874023", "1990", "50kg", "20");
+		this.customers.add(demo1);
+		this.customers.add(demo2);
+		this.customers.add(demo3);
+
+		this.tableView.setItems(customers);
 
 	}
 
@@ -93,6 +138,36 @@ public class ManageEquipmentController extends ManageItemsController {
 	protected void setItemType() {
 
 		this.managerType.setText("Manage " + ManageItemTypes.Equipment.toString());
+
+	}
+
+	protected void addPrinter() {
+
+		AddPrinterController controller = new AddPrinterController();
+		controller.setStage(this.stage);
+		AddItemsLoader loader = new AddItemsLoader(this.stage);
+		loader.setController(controller);
+		loader.loadScene("AddPrinter.fxml");
+
+	}
+
+	protected void addDesktop() {
+
+		AddDesktopController controller = new AddDesktopController();
+		controller.setStage(this.stage);
+		AddItemsLoader loader = new AddItemsLoader(this.stage);
+		loader.setController(controller);
+		loader.loadScene("AddComputer.fxml");
+
+	}
+
+	protected void addLaptop() {
+
+		AddLaptopController controller = new AddLaptopController();
+		controller.setStage(this.stage);
+		AddItemsLoader loader = new AddItemsLoader(this.stage);
+		loader.setController(controller);
+		loader.loadScene("AddComputer.fxml");
 
 	}
 

@@ -6,19 +6,19 @@ import javafx.stage.Stage;
 import managementProgram.controllers.AddItemsController;
 import managementProgram.sceneAndSceneLoaders.ManageItemsLoader;
 
-public class AddEquipmentController extends AddItemsController {
+public abstract class AddEquipmentController extends AddItemsController {
 
 	@FXML
-	private TextField equipmentID;
+	protected TextField equipmentID;
 
 	@FXML
-	private TextField equipmentType;
+	protected TextField equipmentType;
 
 	@FXML
-	private TextField year;
+	protected TextField year;
 
 	@FXML
-	private TextField weight;
+	protected TextField weight;
 
 	@Override
 	public void setStage(Stage stage) {
@@ -26,9 +26,15 @@ public class AddEquipmentController extends AddItemsController {
 		this.stage = stage;
 
 	}
+	
+	@FXML
+	public void initialize() {
+		setEquipmentType();
+	}
+
 
 	public boolean isValid() {
-		if ((this.equipmentID == null) || (this.equipmentType == null) || (this.year == null)
+		if ((this.equipmentID == null) || (this.year == null)
 				|| (this.weight == null)) {
 			return false;
 		}
@@ -63,5 +69,7 @@ public class AddEquipmentController extends AddItemsController {
 	public void setWeight(String weight) {
 		this.weight.setText(weight);
 	}
+	
+	protected abstract void setEquipmentType();
 
 }
